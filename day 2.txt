@@ -1,0 +1,20 @@
+1>>>>>>>>  mkdir [option] directory_name
+
+2>>>>>>>> cd iti-0
+
+3>>>>>>>> cat > file1.txt 
+       >> hell9 all
+
+4>>>>>>>> cat file1.txt | tr "9" "o" >file2.txt 
+
+5>>>>>>>> rm file1.txt
+
+6>>>>>>>> ls / var > iti-0/listing.txt
+ 
+7>>>>>>> ls>cd iti-0
+
+8>>>>>>> mv listing.txt list_output.txt
+
+9>>>>>>> nl listi_output.txt > list_output_number.txt
+
+10>>>>>> tail -5 list_output_number.txt
