@@ -1,0 +1,25 @@
+   >>>>>>>> sudo adduser itiuser1
+   >>>>>>>> sudo adduser itiuser1
+   >>>>>>>> sudo addgroup os_team
+   >>>>>>>> makdir os_team_workspace
+   >>>>>>>> chgrp os_team os_team_workspace
+   >>>>>>>> sudo usermod -a -G os_team itiuser1
+   >>>>>>>> sudo usermod -a -G os_team itiuser2
+
+   >>>>>>>>sudo login 
+   >>>>>>>>mkdir /os_team_workspace/mydir1
+   >>>>>>>>stat /os_team_workspace/mydir1/
+
+
+   >>>>>>>>sudo login 
+   >>>>>>>>mkdir /os_team_workspace/mydir2
+   >>>>>>>>stat /os_team_workspace/mydir2/
+
+   >>>>>>>>pstree
+
+   >>>>>>>>tail -f /var/log/syslog
+   >>>>>>>>ctrl+z
+   >>>>>>>>jobs
+   >>>>>>>>bg 2
+   >>>>>>>>ps -axu |grep "tail"
+   >>>>>>>>kill 60705
