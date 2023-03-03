@@ -1,0 +1,29 @@
+>>sudo touch file1
+
+>>dd if=/dev/zero of=/tmp/disk.img bs=512 count=40000
+
+>>sudo losetup -f
+
+>>sudo losetup /dev/loop0 /tmp/disk.img
+
+>>sudo fdisk /dev/loop0
+
+>>n
+
+>>p
+
+>>w
+
+>>sudo partprobe /dev/loop0
+
+>>sudo mkfs.ext4 /dev/loopp1
+
+>>sudo mount /dev/loop0p1 /mnt
+
+>>sudo touch /mnt/file2.txt
+
+>>sudo umount /mnt
+
+>>sudo apt install gparted
+
+>>gparted /dev/loop0p1
