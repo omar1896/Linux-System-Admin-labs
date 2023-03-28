@@ -1,0 +1,43 @@
+>>apt install lvm2
+
+tmp>>dd if=/dev/zer of=disk1.disk bs=1024 create=100000
+tmp>>dd if=/dev/zer of=disk2.disk bs=1024 create=100000
+tmp>>dd if=/dev/zer of=disk3.disk bs=1024 create=100000
+tmp>>dd if=/dev/zer of=disk4.disk bs=1024 create=100000
+
+tmp>>sudo losetup /dev/loop0 disk1.disk
+tmp>>sudo losetup /dev/loop1 disk2.disk
+tmp>>sudo losetup /dev/loop2 disk3.disk
+tmp>>sudo losetup /dev/loop3 disk4.disk
+
+tmp>>sudo pvcreat /dev/loop0
+tmp>>sudo pvcreat /dev/loop1
+tmp>>sudo pvcreat /dev/loop2
+tmp>>sudo pvcreat /dev/loop3
+
+tmp>>sudo vgcreate VG1 /dev/loop0 /dev/loop1 /dev/loop2
+
+tmp>>sudo lvcreate -L 250M VG1
+
+
+tmp>>mkfs.ext4 /dev/VG1/lvol0
+tmp>>sudo mount /dev/VG1/lvol0 /mnt
+
+
+tmp>>sudo vgextend VG1 /dev/loop3
+
+tmp>>sudo lvextend /dev/VG1/lvol0 -L +50M
+
+tmp>>sudo resizefs VG1 /dev/loop3 50m
+
+
+                         /////////////////////////////////////////////////////////
+
+>>ip a
+
+>>netstat -a
+
+>>apt install nmap
+
+>>nmap -v 192.168.0.101
+
