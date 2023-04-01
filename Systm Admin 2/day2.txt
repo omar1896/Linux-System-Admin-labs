@@ -1,0 +1,14 @@
+>>lsusb
+
+>>cat/proc/cpuinfo | grep processor
+
+>>iostat 2 5
+
+>>nicstat
+
+>>lspci
+
+>>ls | grep "*.zip"
+
+>>grep -e "0x" /var/log/syslog
+
