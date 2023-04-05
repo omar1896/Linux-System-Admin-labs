@@ -1,0 +1,34 @@
+>>apt install ftpd
+
+>>sudo iptables -t filter -A INPUT -p tcp --dport 20 -j ACCEPT
+>>sudo iptables -t filter -A INPUT -p tcp --dport 21 -j ACCEPT
+
+
+>>ftp localhost
+ftp>>ls
+
+>>sudo ufw enable
+
+>>sudo ufw deny 21/tcp
+
+>>ftp localhost
+ftp>>ls
+
+>>tail /var/log/kern.log
+
+>>apt install nfs-kernel-server
+
+>>mkdir /tmp/shares
+
+>>sudo nano /etc/exports
+
+/tmp/shares *(rw)
+
+
+>>sudo exportfs -a
+
+>>sudo mount -t nfs localhost:/tmp/shares /mnt
+
+>>sudo cp /tmp/file1.txt /mnt
+
+>>sudo iptables-save > /tmp/iptables-backup
