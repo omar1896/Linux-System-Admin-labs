@@ -1,0 +1,53 @@
+>>sudo apt install apache2
+
+>>mkdir /var/www/html/test
+
+>>sudo echo '<html>
+<h1>hello from ubunto</h1>
+</html>' > /var/www/html/test/index.html
+
+                                    /////////////////////////////////////////
+>>sudo apt install libapache2-mod-php8.1
+						
+				   /////////////////////////////////////////
+
+>>sudo nano /var/www/html/test/index.html 
+><?php hello from php file ?>
+>>sudo mv /var/www/html/test/index.html  /var/www/html/test/index.php 
+
+                                  /////////////////////////////////////////
+>>cd /etc/apache2/sites-enabled
+>>sudo cp 000-test.conf 001-test.conf
+>>sudo nano 001-test.conf
+<VirtualHost *:80>
+        ServerName test.local
+        DocumentRoot /var/www/html/test
+	    ServerAdmin webmaster@localhost
+	    DocumentRoot "/var/www/html/test"
+	    ErrorLog ${APACHE_LOG_DIR}/error.log
+	    CustomLog ${APACHE_LOG_DIR}/access.log combined
+    </VirtualHost>' > /etc/apache2/sites-available/test.conf
+
+                                   /////////////////////////////////////////
+
+
+>>sudo nano /etc/hosts
+ 127.0.0.1  test 
+                                  /////////////////////////////////////////
+
+sudo nano /etc/apache2/sites-available/test.conf
+'<VirtualHost *:80>
+    ServerName test.local
+    DocumentRoot /var/www/html/test
+    <Directory>
+        Options -Indexes
+    </Directory>
+	ServerAdmin webmaster@localhost
+	DocumentRoot "/var/www/html/test"
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>' 
+
+
+
+
