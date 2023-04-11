@@ -1,0 +1,23 @@
+>>sudo apt install nginx
+
+>>sudo systemctl start nginx 
+
+>>sudo ufw allow 80/tcp
+
+>>sudo nano var/www/html/test/index.html
+ <h1>hello from html </h1>
+
+>>sudo apt install php8.1-fpm
+
+
+>>sudo nano /etc/nginx/sites-available/default
+
+        location ~ \.php$ {
+              include snippets/fastcgi-php.conf;
+              fastcgi_pass unix:/run/php/php8.1-fpm.sock;
+        }
+
+>>sudo nginx -s reload
+
+>>sudo nano var/www/html/test/index.php
+<?php echo "hello fro php"; ?>
